@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Available Jobs</title>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Available Jobs</h1>
+
+    <a href="/">Home</a>
+
+    {% for job in jobs %}
+
+    <div class="job">
+
+        <h2>{{ job["title"] }}</h2>
+
+        <p>
+            <strong>Company:</strong>
+            {{ job["company"] }}
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            {{ job["location"] }}
+        </p>
+
+        <a
+            class="button"
+            href="/apply/{{ job['id'] }}"
+        >
+            Apply Now
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
