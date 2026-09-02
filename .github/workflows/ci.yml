@@ -36,7 +36,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker Image
-        run: docker build -t ghcr.io/${{ github.repository_owner }}/prp-job-portal:latest .
+        run: docker build -t ghcr.io/arunvignesh135/prp-job-portal:latest .
 
       - name: Push Docker Image
-        run: docker push ghcr.io/${{ github.repository_owner }}/prp-job-portal:latest
+        run: docker push ghcr.io/arunvignesh135/prp-job-portal:latest
